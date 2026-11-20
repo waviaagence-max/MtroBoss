@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Metro Boss Kebab · Arganda del Rey</title>
+<meta name="description" content="Metro Boss Kebab en Arganda del Rey. Kebab, durum, lahmacun, pizzas artesanales, pollo asador y pollo crispy. Pide a domicilio en Uber Eats y Glovo.">
+<meta name="theme-color" content="#0b0b0b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0b0b;
+  --bg2:#141414;
+  --panel:#181210;
+  --red:#e3120b;
+  --red-dark:#8f0a06;
+  --gold:#ffc21a;
+  --orange:#ff7a00;
+  --cream:#fff4dc;
+  --text:#f4efe6;
+  --muted:#b9ad9c;
+  --line:rgba(227,18,11,.55);
+  --uber:#06c167;
+  --glovo:#ffc244;
+  --glovo-ink:#00a082;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(227,18,11,.28), transparent 60%),
+    radial-gradient(800px 500px at 100% 40%, rgba(255,122,0,.08), transparent 60%),
+    var(--bg);
+  color:var(--text);
+  font-family:"Barlow Condensed",system-ui,sans-serif;
+  font-size:19px;
+  line-height:1.35;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.display{font-family:"Anton",Impact,sans-serif;font-weight:400;letter-spacing:.01em;text-transform:uppercase;line-height:.95}
+.fire{
+  background:linear-gradient(180deg,#fff3a8 0%,var(--gold) 35%,var(--orange) 75%,var(--red) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+header.top{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,11,11,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:48px;height:56px}
+.brand span{font-family:"Anton",sans-serif;font-size:22px;text-transform:uppercase;letter-spacing:.02em}
+.brand span b{color:var(--red);font-weight:400}
+nav.menu-nav{display:flex;gap:26px}
+nav.menu-nav a{text-decoration:none;text-transform:uppercase;font-weight:600;letter-spacing:.06em;font-size:16px;color:var(--muted)}
+nav.menu-nav a:hover{color:var(--gold)}
+.top-cta{
+  text-decoration:none;font-family:"Anton",sans-serif;text-transform:uppercase;font-size:17px;letter-spacing:.04em;
+  background:var(--red);color:#fff;padding:10px 18px;border-radius:6px;
+  box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 6px 20px rgba(227,18,11,.35);
+}
+
+.hero{position:relative;padding:36px 0 64px;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;left:50%;top:-180px;width:760px;height:760px;transform:translateX(-50%) rotate(45deg);
+  border:2px solid var(--line);pointer-events:none;
+}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero-logo{display:block;width:min(150px,36vw);margin-bottom:10px;filter:drop-shadow(0 10px 40px rgba(227,18,11,.55))}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:16px}
+.eyebrow::before,.eyebrow::after{content:"";width:28px;height:3px;background:var(--red)}
+.hero h1{font-size:clamp(46px,6.2vw,80px);margin:10px 0 6px}
+.hero h1 .w{color:#fff}
+.tagline{display:inline-block;background:var(--red);color:#fff;font-family:"Anton",sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:20px;padding:6px 16px;transform:skew(-8deg);margin:6px 0 18px}
+.tagline span{display:inline-block;transform:skew(8deg)}
+.hero p.lead{color:var(--muted);font-size:21px;max-width:34ch;margin-bottom:22px}
+
+.order{display:grid;gap:14px;max-width:520px}
+.order-title{font-family:"Anton",sans-serif;text-transform:uppercase;font-size:22px;letter-spacing:.04em;color:#fff}
+.btn-order{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  text-decoration:none;border-radius:14px;padding:20px 24px;min-height:84px;
+  font-family:"Anton",sans-serif;text-transform:uppercase;letter-spacing:.02em;
+  transition:transform .15s ease,box-shadow .15s ease;
+}
+.btn-order:hover{transform:translateY(-3px)}
+.btn-order:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.btn-order .lbl{display:flex;flex-direction:column;line-height:1}
+.btn-order .lbl small{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:15px;letter-spacing:.14em;opacity:.8;margin-bottom:6px}
+.btn-order .lbl strong{font-weight:400;font-size:34px}
+.btn-order .arrow{flex:none;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-size:26px;font-family:"Barlow Condensed",sans-serif;font-weight:700}
+.btn-uber{background:#000;color:#fff;border:2px solid var(--uber);box-shadow:0 10px 30px rgba(6,193,103,.25)}
+.btn-uber strong em{font-style:normal;color:var(--uber)}
+.btn-uber .arrow{background:var(--uber);color:#000}
+.btn-uber:hover{box-shadow:0 16px 40px rgba(6,193,103,.4)}
+.btn-glovo{background:var(--glovo);color:#1b1b1b;border:2px solid var(--glovo);box-shadow:0 10px 30px rgba(255,194,68,.3)}
+.btn-glovo strong em{font-style:normal;color:var(--glovo-ink)}
+.btn-glovo .arrow{background:var(--glovo-ink);color:#fff}
+.btn-glovo:hover{box-shadow:0 16px 40px rgba(255,194,68,.45)}
+.btn-call{
+  display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;
+  border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:14px;color:#fff;font-weight:700;font-size:20px;letter-spacing:.04em
+}
+.btn-call:hover{border-color:var(--gold);color:var(--gold)}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.chip{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:7px 14px;font-weight:600;font-size:17px}
+.chip b{color:var(--gold);font-weight:700}
+
+.hero-food{position:relative;aspect-ratio:1/1;max-width:540px;justify-self:center;width:100%}
+.hero-food .ring{position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle at 50% 55%,rgba(255,122,0,.45),rgba(227,18,11,.15) 50%,transparent 70%)}
+.plate{position:absolute;border-radius:50%;overflow:hidden;border:4px solid #1d1d1d;box-shadow:0 20px 50px rgba(0,0,0,.6),0 0 0 2px var(--red)}
+.plate img{width:100%;height:100%;object-fit:cover}
+.plate.p1{width:62%;aspect-ratio:1;left:4%;top:8%}
+.plate.p2{width:44%;aspect-ratio:1;right:0;top:36%}
+.plate.p3{width:34%;aspect-ratio:1;left:24%;bottom:0}
+.badge{
+  position:absolute;right:6%;top:4%;width:118px;height:118px;border-radius:50%;
+  border:3px solid var(--gold);display:grid;place-items:center;text-align:center;
+  font-family:"Anton",sans-serif;text-transform:uppercase;color:var(--gold);font-size:15px;line-height:1.05;letter-spacing:.04em;
+  background:rgba(11,11,11,.85);transform:rotate(-12deg)
+}
+
+.strip{background:linear-gradient(90deg,var(--red-dark),var(--red),var(--red-dark));border-block:2px solid var(--gold);overflow:hidden}
+.strip .wrap{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;padding:12px 0;font-family:"Anton",sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:22px}
+.strip i{font-style:normal;color:var(--gold)}
+
+section{padding:80px 0}
+.sec-head{text-align:center;margin-bottom:40px}
+.sec-head h2{font-size:clamp(40px,6vw,68px)}
+.sec-head p{color:var(--muted);font-size:20px;margin-top:8px}
+
+.featured{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:linear-gradient(180deg,#1b1b1b,#111);border:1px solid rgba(255,255,255,.07);border-radius:16px;overflow:hidden;position:relative}
+.card img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.card .info{padding:16px 18px 20px}
+.card h3{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;font-size:28px;line-height:1}
+.card h3 span{color:var(--gold)}
+.card p{color:var(--muted);font-size:17px;margin-top:6px}
+.card .price{position:absolute;top:12px;right:12px;background:var(--red);color:#fff;font-family:"Anton",sans-serif;font-size:20px;padding:6px 12px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.5)}
+.card .price small{font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;margin-right:4px;opacity:.85}
+
+#carta{background:linear-gradient(180deg,transparent,rgba(227,18,11,.06) 30%,transparent)}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:34px}
+.tab{
+  font:inherit;cursor:pointer;background:transparent;color:var(--text);
+  border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:9px 18px;
+  font-family:"Anton",sans-serif;text-transform:uppercase;letter-spacing:.04em;font-size:17px
+}
+.tab[aria-selected="true"]{background:var(--red);border-color:var(--red)}
+.tab:hover{border-color:var(--gold)}
+.panel{display:none}
+.panel.active{display:block}
+.no-js .panel{display:block;margin-bottom:48px}
+.no-js .tabs{display:none}
+
+.box{border:2px solid var(--line);border-radius:14px;background:rgba(10,10,10,.75);padding:24px 26px;box-shadow:0 0 30px rgba(227,18,11,.12) inset}
+.box + .box{margin-top:22px}
+.box h3{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;font-size:30px;margin-bottom:14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.box h3 small{font-family:"Barlow Condensed",sans-serif;font-size:16px;color:var(--gold);letter-spacing:.12em;font-weight:700}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+
+.list{list-style:none;display:grid;gap:2px}
+.list li{display:flex;align-items:baseline;gap:10px;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
+.list li:last-child{border-bottom:0}
+.list .code{flex:none;min-width:44px;font-family:"Anton",sans-serif;font-size:15px;color:#fff;background:var(--red);border-radius:4px;padding:2px 6px;text-align:center}
+.list .name{font-weight:600;font-size:20px}
+.list .desc{display:block;font-weight:400;font-size:16px;color:var(--muted)}
+.list .dots{flex:1;border-bottom:2px dotted rgba(255,255,255,.18);transform:translateY(-5px);min-width:16px}
+.list .pr{flex:none;font-family:"Anton",sans-serif;color:var(--gold);font-size:21px;white-space:nowrap}
+.list .pr small{font-family:"Barlow Condensed",sans-serif;font-size:14px;color:var(--muted);margin-right:4px;font-weight:600;text-transform:uppercase}
+
+.sizes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.size{border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px;text-align:center}
+.size b{display:block;text-transform:uppercase;letter-spacing:.08em;font-size:16px}
+.size span{color:var(--muted);font-size:16px}
+.size strong{display:block;font-family:"Anton",sans-serif;font-weight:400;color:var(--gold);font-size:28px}
+.pizzas{list-style:none;counter-reset:p;columns:2;column-gap:28px}
+.pizzas li{break-inside:avoid;padding:7px 0;counter-increment:p;display:flex;gap:10px}
+.pizzas li::before{content:counter(p);font-family:"Anton",sans-serif;color:var(--red);font-size:22px;min-width:26px;line-height:1.1}
+.pizzas b{color:var(--gold);font-weight:700}
+.pizzas span{color:var(--muted);font-size:17px}
+.extras{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:6px;font-weight:600}
+.extras span{display:flex;align-items:center;gap:8px}
+.extras span::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--red)}
+.extras b{color:var(--gold)}
+.note{color:var(--muted);font-size:16px;margin-top:10px}
+
+.cta-band{position:relative;padding:64px 0;background:
+  linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.6)),
+  radial-gradient(600px 300px at 20% 50%,rgba(255,122,0,.35),transparent 70%),
+  linear-gradient(120deg,var(--red-dark),#2a0503 60%,#0b0b0b);
+  border-block:2px solid var(--gold)}
+.cta-band .wrap{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.cta-band h2{font-size:clamp(40px,5.5vw,64px)}
+.cta-band p{color:var(--cream);opacity:.85;font-size:21px;margin-top:10px}
+
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.info-card{background:var(--bg2);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:26px}
+.info-card h3{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;font-size:24px;color:var(--gold);margin-bottom:10px}
+.info-card p{font-size:20px}
+.info-card a{color:#fff;text-decoration:none;border-bottom:2px solid var(--red)}
+.info-card a:hover{color:var(--gold)}
+.big{font-family:"Anton",sans-serif;font-size:34px;line-height:1.1}
+
+footer{border-top:1px solid rgba(255,255,255,.08);padding:34px 0 120px;color:var(--muted);font-size:16px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+footer .brand svg{width:40px;height:46px}
+
+.sticky-order{
+  transition:transform .25s ease;
+  position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(11,11,11,.94);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.1)
+}
+.sticky-order a{flex:1;text-align:center;text-decoration:none;font-family:"Anton",sans-serif;text-transform:uppercase;font-size:19px;padding:14px 8px;border-radius:10px;letter-spacing:.02em}
+.sticky-order .u{background:#000;color:#fff;border:2px solid var(--uber)}
+.sticky-order .u em{font-style:normal;color:var(--uber)}
+.sticky-order .g{background:var(--glovo);color:#1b1b1b}
+
+@media (max-width:980px){
+  nav.menu-nav{display:none}
+  .hero-grid{grid-template-columns:1fr}
+  .hero-food{max-width:420px;order:-1;display:none}
+  .featured{grid-template-columns:repeat(2,1fr)}
+  .cols{grid-template-columns:1fr}
+  .cta-band .wrap{grid-template-columns:1fr}
+  .info-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  body{font-size:18px}
+  .top .wrap{height:64px}
+  .brand span{font-size:19px}
+  .top-cta{display:none}
+  .hero{padding:32px 0 48px;text-align:center}
+  .hero .eyebrow,.chips{justify-content:center}
+  .hero-logo{margin-inline:auto}
+  .hero p.lead{display:none}
+  .hero h1{font-size:44px}
+  .tagline{font-size:17px;margin-bottom:20px}
+  .order{margin-inline:auto}
+  .btn-order{padding:16px 18px;min-height:76px}
+  .btn-order .lbl{text-align:left}
+  .btn-order .lbl strong{font-size:28px}
+  .strip .wrap{font-size:18px;gap:16px}
+  section{padding:56px 0}
+  .featured{gap:12px}
+  .card h3{font-size:22px}
+  .card p{font-size:15px}
+  .card .info{padding:12px}
+  .box{padding:18px 16px}
+  .box h3{font-size:25px}
+  .pizzas{columns:1}
+  .sizes{gap:8px}
+  .size strong{font-size:23px}
+  .list .name{font-size:18px}
+  .sticky-order{display:flex}
+  .sticky-order.hide{transform:translateY(110%)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn-order{transition:none}
+}
+</style>
+</head>
+<body class="no-js">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="lg-shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd23f"/>
+      <stop offset=".55" stop-color="#ff8a00"/>
+      <stop offset="1" stop-color="#c41006"/>
+    </linearGradient>
+    <linearGradient id="lg-rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff6c8"/>
+      <stop offset=".5" stop-color="#ffc21a"/>
+      <stop offset="1" stop-color="#b86e00"/>
+    </linearGradient>
+    <linearGradient id="lg-meat" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7a3410"/>
+      <stop offset=".45" stop-color="#d9822b"/>
+      <stop offset="1" stop-color="#6a2a0b"/>
+    </linearGradient>
+    <linearGradient id="lg-red" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff3b2f"/>
+      <stop offset="1" stop-color="#b80c05"/>
+    </linearGradient>
+  </defs>
+  <symbol id="logo" viewBox="0 0 200 232">
+    <path d="M100 6 L186 34 L186 118 C186 172 148 206 100 226 C52 206 14 172 14 118 L14 34 Z" fill="#111" stroke="url(#lg-rim)" stroke-width="8"/>
+    <path d="M100 22 L172 45 L172 116 C172 162 140 192 100 210 C60 192 28 162 28 116 L28 45 Z" fill="url(#lg-shield)"/>
+    <line x1="100" y1="18" x2="100" y2="140" stroke="#3a2a20" stroke-width="5" stroke-linecap="round"/>
+    <path d="M70 40 Q100 30 130 40 Q134 86 118 132 L82 132 Q66 86 70 40 Z" fill="url(#lg-meat)" stroke="#3b1505" stroke-width="2"/>
+    <g stroke="#4a1a06" stroke-width="2.4" fill="none" opacity=".75">
+      <path d="M72 52 Q100 44 128 52"/>
+      <path d="M72 64 Q100 56 128 64"/>
+      <path d="M73 76 Q100 68 127 76"/>
+      <path d="M75 88 Q100 80 125 88"/>
+      <path d="M77 100 Q100 92 123 100"/>
+      <path d="M80 112 Q100 104 120 112"/>
+      <path d="M82 124 Q100 116 118 124"/>
+    </g>
+    <path d="M86 44 Q90 80 88 126" stroke="#ffd08a" stroke-width="3" fill="none" opacity=".45" stroke-linecap="round"/>
+    <g stroke-linecap="round">
+      <line x1="44" y1="54" x2="62" y2="132" stroke="#c9c9c9" stroke-width="3"/>
+      <rect x="44" y="70" width="14" height="11" rx="3" transform="rotate(-13 51 75)" fill="#a0521c"/>
+      <rect x="46" y="83" width="14" height="9" rx="3" transform="rotate(-13 53 87)" fill="#3fa34d"/>
+      <rect x="48" y="94" width="14" height="11" rx="3" transform="rotate(-13 55 99)" fill="#a0521c"/>
+      <rect x="51" y="107" width="14" height="9" rx="3" transform="rotate(-13 58 111)" fill="#e3261b"/>
+      <line x1="156" y1="54" x2="138" y2="132" stroke="#c9c9c9" stroke-width="3"/>
+      <rect x="142" y="70" width="14" height="11" rx="3" transform="rotate(13 149 75)" fill="#a0521c"/>
+      <rect x="140" y="83" width="14" height="9" rx="3" transform="rotate(13 147 87)" fill="#e3261b"/>
+      <rect x="138" y="94" width="14" height="11" rx="3" transform="rotate(13 145 99)" fill="#a0521c"/>
+      <rect x="135" y="107" width="14" height="9" rx="3" transform="rotate(13 142 111)" fill="#3fa34d"/>
+    </g>
+    <path d="M4 128 L196 128 L188 146 L196 164 L4 164 L12 146 Z" fill="#0d0d0d" stroke="url(#lg-rim)" stroke-width="3"/>
+    <text x="100" y="158" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="32" fill="url(#lg-red)" stroke="#fff" stroke-width=".6" letter-spacing="1">METRO</text>
+    <text x="100" y="196" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="36" fill="url(#lg-red)" stroke="#111" stroke-width="1.5" paint-order="stroke" letter-spacing="2">BOSS</text>
+    <text x="100" y="214" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="13" fill="#fff" letter-spacing="3">KEBAB</text>
+  </symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Metro Boss Kebab, inicio">
+      <svg viewBox="0 0 200 232" aria-hidden="true"><use href="#logo"/></svg>
+      <span>Metro <b>Boss</b> Kebab</span>
+    </a>
+    <nav class="menu-nav" aria-label="Secciones">
+      <a href="#destacados">Especialidades</a>
+      <a href="#carta">Carta</a>
+      <a href="#ofertas">Ofertas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="top-cta" href="#pedir">Pedir ahora</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero" id="pedir">
+    <div class="wrap hero-grid">
+      <div>
+        <svg class="hero-logo" viewBox="0 0 200 232" role="img" aria-label="Logo de Metro Boss Kebab"><use href="#logo"/></svg>
+        <span class="eyebrow">Arganda del Rey</span>
+        <h1 class="display"><span class="fire">Metro</span> <span class="w">Boss</span><br><span class="fire">Kebab</span></h1>
+        <div class="tagline"><span>Sabores que mandan</span></div>
+        <p class="lead">Kebab, durum, lahmacun, pizzas artesanales y pollo asador. Hecho al momento y en tu casa en minutos.</p>
+
+        <div class="order">
+          <div class="order-title">Pide a domicilio</div>
+          <a class="btn-order btn-uber" href="https://www.ubereats.com/es/search?q=Metro%20Boss%20Kebab" target="_blank" rel="noopener">
+            <span class="lbl"><small>Pedir en</small><strong>Uber <em>Eats</em></strong></span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a class="btn-order btn-glovo" href="https://glovoapp.com/es/es/arganda-del-rey/" target="_blank" rel="noopener">
+            <span class="lbl"><small>Pedir en</small><strong>Glo<em>vo</em></strong></span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+          <a class="btn-call" href="tel:+34919525357">Llámanos · 919 52 53 57</a>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Horario <b>12:00 – 24:00</b></span>
+          <span class="chip">Servicio a domicilio <b>2 €</b></span>
+          <span class="chip">Para llevar</span>
+        </div>
+      </div>
+
+      <div class="hero-food" aria-hidden="true">
+        <div class="ring"></div>
+        <div class="plate p1"><img src="img/pita-kebab.jpg" alt=""></div>
+        <div class="plate p2"><img src="img/pollo-asador.jpg" alt=""></div>
+        <div class="plate p3"><img src="img/pizza.jpg" alt=""></div>
+        <div class="badge">Calidad<br>Sabor<br>Experiencia</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <div class="wrap"><span>Fresco</span><i>&#9733;</i><span>Sabroso</span><i>&#9733;</i><span>Irresistible</span><i>&#9733;</i><span>Hecho al momento</span></div>
+  </div>
+
+  <section id="destacados">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display">Nuestras <span class="fire">especialidades</span></h2>
+        <p>Lo que más se pide en Metro Boss</p>
+      </div>
+      <div class="featured">
+        <article class="card">
+          <img src="img/pita-kebab.jpg" alt="Kebab de pita con carne, lechuga, tomate y salsa blanca" loading="lazy">
+          <span class="price"><small>desde</small>4,00€</span>
+          <div class="info"><h3>Pita <span>Kebab</span></h3><p>Ternera, pollo o mixto</p></div>
+        </article>
+        <article class="card">
+          <img src="img/durum.jpg" alt="Durum enrollado con pollo y salsa" loading="lazy">
+          <span class="price"><small>desde</small>4,99€</span>
+          <div class="info"><h3>Durum <span>Boss</span></h3><p>Normal o gratinado</p></div>
+        </article>
+        <article class="card">
+          <img src="img/pollo-asador.jpg" alt="Pollo asado con patatas y tomates" loading="lazy">
+          <span class="price"><small>desde</small>4,99€</span>
+          <div class="info"><h3>Pollo <span>Asador</span></h3><p>Medio o entero</p></div>
+        </article>
+        <article class="card">
+          <img src="img/pizza.jpg" alt="Pizza artesanal con pepperoni y aceitunas" loading="lazy">
+          <span class="price"><small>desde</small>6,00€</span>
+          <div class="info"><h3>Pizza <span>Artesanal</span></h3><p>Masa fresca, 15 variedades</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="carta">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display">La <span class="fire">carta</span></h2>
+        <p>Kebab · Durum · Lahmacun · Pizzas · Pollo</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Categorías de la carta">
+        <button class="tab" role="tab" aria-selected="true" aria-controls="t-kebab" id="b-kebab">Kebab y durum</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="t-menus" id="b-menus">Menús</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="t-pollo" id="b-pollo">Pollo</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="t-pizzas" id="b-pizzas">Pizzas</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="t-raciones" id="b-raciones">Raciones</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="ofertas" id="b-ofertas">Ofertas</button>
+      </div>
+
+      <div class="panel active" role="tabpanel" id="t-kebab" aria-labelledby="b-kebab">
+        <div class="cols">
+          <div class="box">
+            <h3>Kebab y durum <small>TERNERA · POLLO · MIXTO</small></h3>
+            <ul class="list">
+              <li><span class="code">1</span><span class="name">Kebab</span><span class="dots"></span><span class="pr">4,00€</span></li>
+              <li><span class="code">2</span><span class="name">Durum</span><span class="dots"></span><span class="pr">4,99€</span></li>
+              <li><span class="code">3</span><span class="name">Kebab falafel</span><span class="dots"></span><span class="pr">3,50€</span></li>
+              <li><span class="code">3</span><span class="name">Durum falafel</span><span class="dots"></span><span class="pr">4,50€</span></li>
+              <li><span class="code">4</span><span class="name">Lahmacun</span><span class="dots"></span><span class="pr">6,00€</span></li>
+              <li><span class="code">5</span><span class="name">Plato kebab</span><span class="dots"></span><span class="pr">6,00€</span></li>
+              <li><span class="code">6</span><span class="name">Taco durum<span class="desc">Pollo, ternera o fingers</span></span><span class="dots"></span><span class="pr">6,00€</span></li>
+              <li><span class="code">7</span><span class="name">Durum gratinado</span><span class="dots"></span><span class="pr">6,00€</span></li>
+            </ul>
+          </div>
+          <div>
+            <div class="box">
+              <h3>Kebab box <small>CARNE + PATATAS</small></h3>
+              <ul class="list">
+                <li><span class="name">Normal</span><span class="dots"></span><span class="pr">3,99€</span></li>
+                <li><span class="name">Doble</span><span class="dots"></span><span class="pr">4,99€</span></li>
+              </ul>
+            </div>
+            <div class="box">
+              <h3>Más</h3>
+              <ul class="list">
+                <li><span class="name">Bocadillo de pollo o ternera<span class="desc">Lechuga, tomate, cebolla, salsas</span></span><span class="dots"></span><span class="pr">6,50€</span></li>
+                <li><span class="name">Calzone especial<span class="desc">Tomate, mozzarella, cebolla, ternera/pollo, pimiento, maíz</span></span><span class="dots"></span><span class="pr"><small>Med.</small>10€ · <small>Fam.</small>15€</span></li>
+                <li><span class="name">Plato gratinado<span class="desc">Queso con patatas y carne</span></span><span class="dots"></span><span class="pr">8,00€</span></li>
+              </ul>
+              <div class="extras" style="margin-top:14px">
+                <span>Doble de carne <b>+1€</b></span>
+                <span>Solo carne <b>+0,50€</b></span>
+                <span>Extra queso <b>+0,70€</b></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="t-menus" aria-labelledby="b-menus">
+        <div class="cols">
+          <div class="box">
+            <h3>Menús <small>CON PATATAS + BEBIDA</small></h3>
+            <ul class="list">
+              <li><span class="code">A1</span><span class="name">Menú kebab</span><span class="dots"></span><span class="pr">6,00€</span></li>
+              <li><span class="code">A2</span><span class="name">Menú durum</span><span class="dots"></span><span class="pr">7,00€</span></li>
+              <li><span class="code">A3</span><span class="name">Menú lahmacun</span><span class="dots"></span><span class="pr">8,50€</span></li>
+              <li><span class="code">A4</span><span class="name">Menú plato kebab<span class="desc">Con patatas o arroz</span></span><span class="dots"></span><span class="pr">7,00€</span></li>
+              <li><span class="code">A5</span><span class="name">Menú hamburguesa</span><span class="dots"></span><span class="pr">6,00€</span></li>
+              <li><span class="code">A6</span><span class="name">Menú pollo<span class="desc">1/2 pollo asado + ensalada + pan</span></span><span class="dots"></span><span class="pr">8,50€</span></li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Especiales</h3>
+            <ul class="list">
+              <li><span class="code">A7</span><span class="name">Menú pizza<span class="desc">Pizza mediana</span></span><span class="dots"></span><span class="pr">9,00€</span></li>
+              <li><span class="code">A8.A</span><span class="name">Menú popcorn</span><span class="dots"></span><span class="pr">6,00€</span></li>
+              <li><span class="code">A8.B</span><span class="name">Menú alitas</span><span class="dots"></span><span class="pr">6,50€</span></li>
+              <li><span class="code">&#9733;</span><span class="name">Menú taco gratinado</span><span class="dots"></span><span class="pr">8,50€</span></li>
+              <li><span class="code">&#9733;</span><span class="name">Menú durum gratinado</span><span class="dots"></span><span class="pr">8,50€</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="t-pollo" aria-labelledby="b-pollo">
+        <div class="cols">
+          <div class="box">
+            <h3>Pollo frito crispy <small>EXTRA CRUJIENTE · 100% FRESCO</small></h3>
+            <ul class="list">
+              <li><span class="code">K1</span><span class="name">3 pollo frito + patatas + Coca-Cola</span><span class="dots"></span><span class="pr">6,50€</span></li>
+              <li><span class="code">K2</span><span class="name">6 pollo frito + patatas + Coca-Cola 2L</span><span class="dots"></span><span class="pr">11,50€</span></li>
+              <li><span class="code">K3</span><span class="name">9 pollo frito + patatas + Coca-Cola 2L</span><span class="dots"></span><span class="pr">15,00€</span></li>
+              <li><span class="code">K4</span><span class="name">12 pollo frito + patatas + Coca-Cola 2L</span><span class="dots"></span><span class="pr">18,00€</span></li>
+              <li><span class="code">1 ud</span><span class="name">Pollo frito suelto</span><span class="dots"></span><span class="pr">1,30€</span></li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Pollo asador</h3>
+            <ul class="list">
+              <li><span class="name">Medio pollo</span><span class="dots"></span><span class="pr">4,99€</span></li>
+              <li><span class="name">Pollo entero</span><span class="dots"></span><span class="pr">8,50€</span></li>
+              <li><span class="code">&#9733;</span><span class="name">Oferta pollo asado<span class="desc">1 pollo + patatas + Coca-Cola + arroz + ensalada</span></span><span class="dots"></span><span class="pr">15,00€</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="t-pizzas" aria-labelledby="b-pizzas">
+        <div class="box">
+          <h3>Pizzas artesanales <small>&#9733; MASA FRESCA &#9733;</small></h3>
+          <div class="sizes">
+            <div class="size"><b>Pequeña</b><span>27 cm</span><strong>6,00€</strong></div>
+            <div class="size"><b>Mediana</b><span>33 cm</span><strong>6,50€</strong></div>
+            <div class="size"><b>Familiar</b><span>40 cm</span><strong>11,50€</strong></div>
+          </div>
+          <ol class="pizzas">
+            <li><div><b>Kebab</b> <span>Tomate, mozzarella, cebolla, ternera/pollo, pimientos, aceitunas</span></div></li>
+            <li><div><b>BBQ</b> <span>Tomate, mozzarella, pollo/carne picada, cebolla, salsa BBQ, maíz</span></div></li>
+            <li><div><b>4 Quesos</b> <span>Tomate, mozzarella, 4 quesos, orégano</span></div></li>
+            <li><div><b>Carbonara</b> <span>Mozzarella, nata, cebolla, salami, huevo, champiñones</span></div></li>
+            <li><div><b>Vegetal</b> <span>Tomate, mozzarella, maíz, aceitunas, champiñones, cebolla</span></div></li>
+            <li><div><b>Atún</b> <span>Tomate, mozzarella, atún, pimiento, cebolla, aceitunas</span></div></li>
+            <li><div><b>De la Casa</b> <span>Tomate, mozzarella, salami, aceitunas, pollo, pimiento, cebolla</span></div></li>
+            <li><div><b>Islami</b> <span>Tomate, mozzarella, aceitunas negras, islami de pavo</span></div></li>
+            <li><div><b>Margarita</b> <span>Tomate, mozzarella, orégano</span></div></li>
+            <li><div><b>Mexicana</b> <span>Salsa tomate, mozzarella, carne picada, jalapeños, pollo</span></div></li>
+            <li><div><b>Punjabi</b> <span>Salsa tomate, mozzarella, pollo/ternera, extra de queso</span></div></li>
+            <li><div><b>Seekh Kebab</b> <span>Tomate, mozzarella, cebolla, aceitunas, pimiento, seekh kebab</span></div></li>
+            <li><div><b>De carne</b> <span>Tomate, mozzarella, pollo, ternera</span></div></li>
+            <li><div><b>Hawaiana</b> <span>Tomate, mozzarella, piña</span></div></li>
+            <li><div><b>Pepperoni</b> <span>Salsa tomate, pepperoni, mozzarella</span></div></li>
+          </ol>
+          <div class="extras" style="margin-top:16px">
+            <span>Ingrediente extra <b>+0,50€</b></span>
+            <span>Doble carne <b>+1,00€</b></span>
+            <span>Solo carne <b>+0,50€</b></span>
+            <span>Extra de queso <b>+0,50€</b></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="t-raciones" aria-labelledby="b-raciones">
+        <div class="cols">
+          <div class="box">
+            <h3>Raciones</h3>
+            <ul class="list">
+              <li><span class="name">Alitas de pollo<span class="desc">6 uds · 9 uds</span></span><span class="dots"></span><span class="pr">5,50€ · 6,50€</span></li>
+              <li><span class="name">Nuggets de pollo (6 uds)</span><span class="dots"></span><span class="pr">4,00€</span></li>
+              <li><span class="name">Seekh kebab (3 uds)</span><span class="dots"></span><span class="pr">3,50€</span></li>
+              <li><span class="name">Samosa (3 uds)</span><span class="dots"></span><span class="pr">3,50€</span></li>
+              <li><span class="name">Aros de cebolla (10 uds)</span><span class="dots"></span><span class="pr">4,00€</span></li>
+              <li><span class="name">Hamburguesa individual</span><span class="dots"></span><span class="pr">4,50€</span></li>
+              <li><span class="name">Ensalada turca</span><span class="dots"></span><span class="pr">3,50€</span></li>
+              <li><span class="name">Patatas fritas</span><span class="dots"></span><span class="pr">2,50€</span></li>
+              <li><span class="name">Ración falafel (5 uds)</span><span class="dots"></span><span class="pr">3,50€</span></li>
+              <li><span class="name">Ración carne kebab<span class="desc">Normal · Doble</span></span><span class="dots"></span><span class="pr">5,00€ · 6,00€</span></li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Complementos</h3>
+            <ul class="list">
+              <li><span class="name">Arroz basmati</span><span class="dots"></span><span class="pr">4,00€</span></li>
+              <li><span class="name">Calamares (10 uds)</span><span class="dots"></span><span class="pr">4,50€</span></li>
+              <li><span class="name">Fingers de pollo (6 uds)</span><span class="dots"></span><span class="pr">5,50€</span></li>
+              <li><span class="name">Popcorn chicken</span><span class="dots"></span><span class="pr">4,00€</span></li>
+              <li><span class="name">Croquetas de pollo (6 uds)</span><span class="dots"></span><span class="pr">5,50€</span></li>
+              <li><span class="name">Jalapeños cheddar (6 uds)</span><span class="dots"></span><span class="pr">4,50€</span></li>
+              <li><span class="name">Palitos de mozzarella</span><span class="dots"></span><span class="pr">3,50€</span></li>
+              <li><span class="name">Patatas deluxe o bravas</span><span class="dots"></span><span class="pr">3,50€</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="ofertas" aria-labelledby="b-ofertas">
+        <div class="cols">
+          <div class="box">
+            <h3>Oferta pizza <small>MASA FRESCA</small></h3>
+            <ul class="list">
+              <li><span class="code">C1</span><span class="name">2 pizzas 33 cm + Coca-Cola 2L</span><span class="dots"></span><span class="pr">14,00€</span></li>
+              <li><span class="code">C2</span><span class="name">3 pizzas 33 cm + Coca-Cola 2L</span><span class="dots"></span><span class="pr">21,00€</span></li>
+              <li><span class="code">C3</span><span class="name">4 pizzas 33 cm + Coca-Cola 2L</span><span class="dots"></span><span class="pr">25,50€</span></li>
+              <li><span class="code">C4.A</span><span class="name">1 pizza familiar 40 cm</span><span class="dots"></span><span class="pr">12,00€</span></li>
+              <li><span class="code">C4.B</span><span class="name">2 pizzas familiares 40 cm + Coca-Cola 2L</span><span class="dots"></span><span class="pr">25,00€</span></li>
+              <li><span class="code">C5</span><span class="name">2 pizzas medianas + 3 kebab de pita + Coca-Cola 2L</span><span class="dots"></span><span class="pr">26,50€</span></li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Para compartir</h3>
+            <ul class="list">
+              <li><span class="code">C6</span><span class="name">2 platos kebab + 2 Coca-Cola</span><span class="dots"></span><span class="pr">14,00€</span></li>
+              <li><span class="code">C7.A</span><span class="name">2 kebab pita + patatas + 2 bebidas</span><span class="dots"></span><span class="pr">11,00€</span></li>
+              <li><span class="code">C7.B</span><span class="name">3 kebab pita + patatas + Coca-Cola 2L</span><span class="dots"></span><span class="pr">15,00€</span></li>
+              <li><span class="code">C8.A</span><span class="name">2 durum + patatas + Coca-Cola 2L</span><span class="dots"></span><span class="pr">12,99€</span></li>
+              <li><span class="code">C8.B</span><span class="name">3 durum + 2 patatas + Coca-Cola 2L</span><span class="dots"></span><span class="pr">19,00€</span></li>
+              <li><span class="code">C9.A</span><span class="name">4 kebab pita + 2 patatas + Coca-Cola 2L</span><span class="dots"></span><span class="pr">19,99€</span></li>
+              <li><span class="code">C9.B</span><span class="name">5 kebab pita + patatas + Coca-Cola 2L</span><span class="dots"></span><span class="pr">23,00€</span></li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Súper ofertas</h3>
+            <ul class="list">
+              <li><span class="code">C10.A</span><span class="name">3 platos con patatas y arroz + Coca-Cola 2L</span><span class="dots"></span><span class="pr">19,99€</span></li>
+              <li><span class="code">C10.B</span><span class="name">4 platos con patatas y arroz + Coca-Cola 2L</span><span class="dots"></span><span class="pr">25,00€</span></li>
+              <li><span class="code">&#9733;</span><span class="name">3 durum + 2 kebab pita + patatas + Coca-Cola 2L</span><span class="dots"></span><span class="pr">25,00€</span></li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Combos</h3>
+            <ul class="list">
+              <li><span class="code">C11</span><span class="name">3 Kebab box + Coca-Cola 2L</span><span class="dots"></span><span class="pr">14,50€</span></li>
+              <li><span class="code">C12</span><span class="name">3 hamburguesas + patatas + Coca-Cola 2L</span><span class="dots"></span><span class="pr">14,99€</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p class="note" style="text-align:center;margin-top:26px">Precios en local. En Uber Eats y Glovo pueden variar.</p>
+    </div>
+  </section>
+
+  <section class="cta-band" aria-labelledby="cta-title">
+    <div class="wrap">
+      <div>
+        <h2 id="cta-title" class="display">¿Tienes <span class="fire">hambre</span>?</h2>
+        <p>Pídelo ahora y te lo llevamos a casa en Arganda del Rey.</p>
+      </div>
+      <div class="order">
+        <a class="btn-order btn-uber" href="https://www.ubereats.com/es/search?q=Metro%20Boss%20Kebab" target="_blank" rel="noopener">
+          <span class="lbl"><small>Pedir en</small><strong>Uber <em>Eats</em></strong></span>
+          <span class="arrow" aria-hidden="true">&rarr;</span>
+        </a>
+        <a class="btn-order btn-glovo" href="https://glovoapp.com/es/es/arganda-del-rey/" target="_blank" rel="noopener">
+          <span class="lbl"><small>Pedir en</small><strong>Glo<em>vo</em></strong></span>
+          <span class="arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display">Ven a <span class="fire">vernos</span></h2>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Dónde</h3>
+          <p>Arganda del Rey, Madrid</p>
+          <p style="margin-top:10px"><a href="https://www.google.com/maps/search/?api=1&amp;query=Metro%20Boss%20Kebab%20Arganda%20del%20Rey" target="_blank" rel="noopener">Ver en Google Maps</a></p>
+        </div>
+        <div class="info-card">
+          <h3>Horario</h3>
+          <p class="big">12:00 – 24:00</p>
+          <p style="color:var(--muted)">Todos los días</p>
+        </div>
+        <div class="info-card">
+          <h3>Pedidos</h3>
+          <p class="big"><a href="tel:+34919525357">919 52 53 57</a></p>
+          <p style="color:var(--muted)">Servicio a domicilio 2 € · Para llevar</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Metro Boss Kebab, inicio">
+      <svg viewBox="0 0 200 232" aria-hidden="true"><use href="#logo"/></svg>
+      <span>Metro <b>Boss</b> Kebab</span>
+    </a>
+    <span>Sabores que mandan · Arganda del Rey</span>
+  </div>
+</footer>
+
+<div class="sticky-order hide">
+  <a class="u" href="https://www.ubereats.com/es/search?q=Metro%20Boss%20Kebab" target="_blank" rel="noopener">Uber <em>Eats</em></a>
+  <a class="g" href="https://glovoapp.com/es/es/arganda-del-rey/" target="_blank" rel="noopener">Glovo</a>
+</div>
+
+<script>
+document.body.classList.remove("no-js");
+const tabs = document.querySelectorAll(".tab");
+const panels = document.querySelectorAll(".panel");
+function show(id){
+  tabs.forEach(t => t.setAttribute("aria-selected", t.getAttribute("aria-controls") === id));
+  panels.forEach(p => p.classList.toggle("active", p.id === id));
+}
+tabs.forEach(t => t.addEventListener("click", () => show(t.getAttribute("aria-controls"))));
+const sticky = document.querySelector(".sticky-order");
+new IntersectionObserver(([e]) => sticky.classList.toggle("hide", e.isIntersecting)).observe(document.querySelector(".hero .order"));
+document.querySelectorAll('a[href="#ofertas"]').forEach(a => a.addEventListener("click", () => show("ofertas")));
+</script>
+</body>
+</html>
